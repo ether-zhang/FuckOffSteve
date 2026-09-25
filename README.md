@@ -22,3 +22,5 @@ The normal Yes/No buttons keep their original behavior. Existing penalty counts 
 4. Launch the game. After taking an action in combat, open the quit warning and select **FUCK OFF STEVE**.
 
 Credits: MewUI API and Mewjector. Their license notices are included in `licenses/`.
+
+Source code is available under the [MIT license](LICENSE). See [BUILDING.md](BUILDING.md) for build instructions.

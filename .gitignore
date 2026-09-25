@@ -1,0 +1,17 @@
+build/
+*.dll
+*.obj
+*.exp
+*.lib
+*.log
+__pycache__/
+*.py[cod]
+/swfs/ui.swf
+
+# Local handoff, agent context and environment settings.
+/HANDOFF*.md
+/AGENTS.md
+/.codex/
+/.agents/
+/.env
+/.env.*
