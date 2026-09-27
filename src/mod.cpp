@@ -43,7 +43,7 @@ void __cdecl UiTick(void*) {
     if(!attempted) {
         attempted=true;
         started=steveguard::StartNativeSteveExit(api);
-        api.Log(kOwner,"FuckOffSteve 0.1.2 native exit option: %s",started ? "ready" : "unavailable");
+        api.Log(kOwner,"FuckOffSteve 0.1.3 native exit option: %s",started ? "ready" : "unavailable");
     }
     if(started) steveguard::TickNativeSteveExit();
 }

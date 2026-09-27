@@ -161,7 +161,7 @@ void TickNativeSteveExit() {
         MewButtonCreateInfo info{};
         info.scene_manager=reinterpret_cast<void*>(state.scene);
         info.root_node=reinterpret_cast<void*>(Root()); info.button_node=node;
-        info.node_name="fos_steve_exit"; info.role_name="FOS_SteveExit"; info.label_text="FUCK OFF STEVE";
+        info.node_name="fos_steve_exit"; info.role_name="FOS_SteveExit"; info.label_text="FUCK OFF STEVEN";
         info.enabled=1; info.activate_enabled=1; info.interact_override=MEW_BUTTON_INTERACT_GAME_DEFAULT;
         info.callback=ButtonEvent; info.can_interact_callback=CanInteract;
         auto* button=create_button(&info);

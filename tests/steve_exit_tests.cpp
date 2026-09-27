@@ -81,7 +81,7 @@ int Play(void* node,int frame) {
 }
 void* Create(const MewButtonCreateInfo* info) {
     ++current->created; current->last_info=*info;
-    assert(std::string(info->label_text)=="FUCK OFF STEVE");
+    assert(std::string(info->label_text)=="FUCK OFF STEVEN");
     assert(!info->context && std::uintptr_t(info->scene_manager)==current->scene);
     if(current->fail_create) return nullptr;
     auto* button=reinterpret_cast<void*>(current->button);
@@ -131,7 +131,7 @@ int TestSteveExit() {
         // Exercise the real SDK cache and state tracking with no game base.
         // Native text rendering is deliberately unavailable in this test.
         if(!record || record->label_override_kind!=1 ||
-            std::string(record->label_values[0])!="FUCK OFF STEVE") {
+            std::string(record->label_values[0])!="FUCK OFF STEVEN") {
             std::cerr << "Steven exit failed: newly created button has no persistent literal label.\n";
             return 1;
         }
@@ -141,7 +141,7 @@ int TestSteveExit() {
             assert(MewUI_SetButtonState(button,next));
             MewUI_Tick();
             assert(record->last_state==next && record->label_override_kind==1);
-            assert(std::string(record->label_values[0])=="FUCK OFF STEVE");
+            assert(std::string(record->label_values[0])=="FUCK OFF STEVEN");
         }
         assert(f.clicked==0 && f.writes==0 && state.phase==Phase::Ready);
     }
