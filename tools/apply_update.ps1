@@ -3,7 +3,7 @@ $fosRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 if (@(Get-Process -Name Mewgenics -ErrorAction SilentlyContinue).Count) {
     throw 'Exit Mewgenics normally before updating. No game process was stopped.'
 }
-$fosDll = Join-Path $fosRoot 'build\FuckOffSteve.dll'
+$fosDll = Join-Path $fosRoot 'build\FuckOffSteven.dll'
 $fosUi = Join-Path $fosRoot 'build\ui.swf'
 if (-not (Test-Path -LiteralPath $fosDll) -or -not (Test-Path -LiteralPath $fosUi)) {
     throw 'Build the standalone mod before applying the update.'
@@ -18,9 +18,9 @@ try {
 } finally { $fosStream.Dispose() }
 $fosUiDir = Join-Path $fosRoot 'swfs'
 New-Item -ItemType Directory -Path $fosUiDir -Force | Out-Null
-foreach ($fosPair in @(@($fosUi,(Join-Path $fosUiDir 'ui.swf')),@($fosDll,(Join-Path $fosRoot 'FuckOffSteve.dll')))) {
+foreach ($fosPair in @(@($fosUi,(Join-Path $fosUiDir 'ui.swf')),@($fosDll,(Join-Path $fosRoot 'FuckOffSteven.dll')))) {
     $fosHash = (Get-FileHash -LiteralPath $fosPair[0] -Algorithm SHA256).Hash
     Copy-Item -LiteralPath $fosPair[0] -Destination $fosPair[1]
     if ((Get-FileHash -LiteralPath $fosPair[1] -Algorithm SHA256).Hash -ne $fosHash) { throw 'Installed file hash mismatch.' }
 }
-Write-Output 'FuckOffSteve update VERIFIED: standalone DLL and uncompressed UI asset match the build.'
+Write-Output 'FuckOffSteven update VERIFIED: standalone DLL and uncompressed UI asset match the build.'

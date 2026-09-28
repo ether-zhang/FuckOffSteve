@@ -10,7 +10,7 @@
 #include <cstring>
 
 namespace {
-constexpr const char* kOwner="FuckOffSteve";
+constexpr const char* kOwner="FuckOffSteven";
 using ProcessArgs=std::intptr_t(__fastcall*)(void*,int,const char**);
 MewjectorAPI api{};
 ProcessArgs next_args=nullptr;
@@ -43,7 +43,7 @@ void __cdecl UiTick(void*) {
     if(!attempted) {
         attempted=true;
         started=steveguard::StartNativeSteveExit(api);
-        api.Log(kOwner,"FuckOffSteve 0.1.3 native exit option: %s",started ? "ready" : "unavailable");
+        api.Log(kOwner,"FuckOffSteven 0.1.4 native exit option: %s",started ? "ready" : "unavailable");
     }
     if(started) steveguard::TickNativeSteveExit();
 }

@@ -4,7 +4,7 @@ Requires Windows x64, Visual Studio 2022 C++ Build Tools with the Windows SDK,
 Python 3, and a local Mewgenics installation matching Steam build 25143593.
 The pinned MewUI SDK is included in `vendor/mew-ui-api`.
 
-Place the checkout at `<Mewgenics>/mods/FuckOffSteve`, then open PowerShell in
+Place the checkout at `<Mewgenics>/mods/FuckOffSteven`, then open PowerShell in
 that directory. The build reads the game's `Mewgenics.exe` and `resources.gpak`
 two directories above the checkout. Those game files are not included here.
 
@@ -18,7 +18,7 @@ $env:FOS_PYTHON = 'C:\Path\To\Python\python.exe'
 
 Omit the optional assignment when Python is already available on PATH.
 The build verifies native signatures, generates an uncompressed UI resource,
-runs the resource checks, and compiles `build/FuckOffSteve.dll`.
+runs the resource checks, and compiles `build/FuckOffSteven.dll`.
 The test runner uses synthetic memory and does not connect to the game.
 
 After closing the game, install the built DLL and UI resource with:

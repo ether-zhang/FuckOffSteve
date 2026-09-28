@@ -19,7 +19,7 @@ if errorlevel 1 exit /b 1
 pushd "%FOS_ROOT%build"
 cl /nologo /MT /utf-8 /O2 /W3 /D_CRT_SECURE_NO_WARNINGS /I"%FOS_ROOT%vendor\mew-ui-api\src\native" /c "%FOS_ROOT%vendor\mew-ui-api\src\native\mew_ui_api.c" /Fo:mew_ui_api.obj
 if errorlevel 1 goto :failed
-cl /nologo /std:c++17 /EHsc /MT /utf-8 /O2 /W3 /I"%FOS_ROOT%vendor\mew-ui-api\src\native" /LD "%FOS_ROOT%src\mod.cpp" "%FOS_ROOT%src\native_steve_exit.cpp" "%FOS_ROOT%src\safe_read.cpp" mew_ui_api.obj /Fe:FuckOffSteve.dll /link user32.lib
+cl /nologo /std:c++17 /EHsc /MT /utf-8 /O2 /W3 /I"%FOS_ROOT%vendor\mew-ui-api\src\native" /LD "%FOS_ROOT%src\mod.cpp" "%FOS_ROOT%src\native_steve_exit.cpp" "%FOS_ROOT%src\safe_read.cpp" mew_ui_api.obj /Fe:FuckOffSteven.dll /link user32.lib
 if errorlevel 1 goto :failed
 popd
 exit /b 0

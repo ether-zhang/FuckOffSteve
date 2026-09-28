@@ -5,23 +5,23 @@
 
 void TestNativeArgs() {
     using Strings = std::vector<std::string>;
-    const std::string folder = "F:/Game Folder/mods/FuckOffSteve";
+    const std::string folder = "F:/Game Folder/mods/FuckOffSteven";
     const std::string base = "F:/Game Folder";
     assert((steveguard::AddOwnModPath({"Mewgenics.exe"}, folder, base) ==
         Strings{"Mewgenics.exe", "-modpaths", folder}));
     const Strings existing{"Mewgenics.exe", "-modpaths", "OtherOne", "OtherTwo", "-fullscreen", "0"};
     assert((steveguard::AddOwnModPath(existing, folder, base) ==
         Strings{"Mewgenics.exe", "-modpaths", folder, "OtherOne", "OtherTwo", "-fullscreen", "0"}));
-    const Strings relative{"Mewgenics.exe", "-modpaths", ".\\mods\\FuckOffSteve", "-devmode"};
+    const Strings relative{"Mewgenics.exe", "-modpaths", ".\\mods\\FuckOffSteven", "-devmode"};
     assert(steveguard::AddOwnModPath(relative, folder, base) == relative);
-    const Strings mixed_case{"Mewgenics.exe", "-MODPATHS", "f:\\game folder\\mods\\FUCKOFFSTEVE\\"};
+    const Strings mixed_case{"Mewgenics.exe", "-MODPATHS", "f:\\game folder\\mods\\FUCKOFFSTEVEN\\"};
     assert(steveguard::AddOwnModPath(mixed_case, folder, base) == mixed_case);
-    const Strings similar{"Mewgenics.exe", "-modpaths", "mods/FuckOffSteveOther"};
+    const Strings similar{"Mewgenics.exe", "-modpaths", "mods/FuckOffStevenOther"};
     assert(steveguard::AddOwnModPath(similar, folder, base).size() == similar.size() + 1);
     const Strings elsewhere{"Mewgenics.exe", "-output", folder};
     assert(steveguard::AddOwnModPath(elsewhere, folder, base).size() == elsewhere.size() + 2);
-    const std::string unicode_folder = "F:/中文 目录/mods/FuckOffSteve";
-    assert(steveguard::NormalizeModPath(".\\mods\\FuckOffSteve", "F:/中文 目录") ==
+    const std::string unicode_folder = "F:/中文 目录/mods/FuckOffSteven";
+    assert(steveguard::NormalizeModPath(".\\mods\\FuckOffSteven", "F:/中文 目录") ==
            steveguard::NormalizeModPath(unicode_folder));
     assert(steveguard::AddOwnModPath({}, folder).empty());
     // Each mod registers only its own path; either hook order preserves both.

@@ -34,7 +34,7 @@ auto scene_ready=MewUI_IsSceneReadyForUITick;
 
 template<class T> T Value(std::uintptr_t p) { T v{}; ReadBytes(p,&v,sizeof(v)); return v; }
 std::uintptr_t Ptr(std::uintptr_t p) { return Value<std::uintptr_t>(p); }
-void Log(const char* text) { if(api.Log) api.Log("FuckOffSteve","%s",text); }
+void Log(const char* text) { if(api.Log) api.Log("FuckOffSteven","%s",text); }
 bool ContextLive() {
     return ready && state.phase!=Phase::None && state.director && state.pause && state.engine &&
         Ptr(image+0x13DAC30)==state.director && Ptr(state.director+0x590)==state.engine &&
@@ -136,7 +136,7 @@ bool StartNativeSteveExit(const MewjectorAPI& source) {
     if(Ptr(image+kExitYesTable+0x10)!=image+0x29AD50 ||
         Ptr(image+kExitNoTable+0x10)!=image+0x29AC40) return false;
     void* next=nullptr;
-    if(!api.InstallHook(kMark,17,reinterpret_cast<void*>(&MarkHook),&next,30,"FuckOffSteve Steven exit marker") || !next) return false;
+    if(!api.InstallHook(kMark,17,reinterpret_cast<void*>(&MarkHook),&next,30,"FuckOffSteven exit marker") || !next) return false;
     next_mark=reinterpret_cast<MarkFn>(next);
     yes_click=reinterpret_cast<ClickFn>(image+kYesClick); ready=true;
     return true;
